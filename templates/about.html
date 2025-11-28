@@ -30,12 +30,12 @@ About
                             <label for="version" class="control-label">Current version</label>
                             <input type="text" class="form-control" id="version" value="{{ .appVersion }}" readonly>
                         </div>
-{{ if .gitCommit }}
+                        {{ if .gitCommit }}
                         <div class="form-group">
                             <label for="version" class="control-label">git commit hash</label>
                             <input type="text" class="form-control" id="version" value="{{ .gitCommit }}" readonly>
                         </div>
-{{ end }}
+                        {{ end }}
                         <div class="form-group">
                             <label for="currentReleaseDate" class="control-label">Current version release date</label>
                             <input type="text" class="form-control" id="currentReleaseDate" readonly>
@@ -53,7 +53,7 @@ About
                             <div id="author">
                                 <a id="authorLink">
                                     <img id="authorImage"
-                                         style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid #000;">
+                                        style="width: 50px; height: 50px; border-radius: 50%; border: 1px solid #000;">
                                 </a>
                             </div>
                         </div>
@@ -63,8 +63,10 @@ About
                         </div>
                         <strong>Copyright &copy;
                             <script>document.write(new Date().getFullYear())</script>
-                            <a href="https://github.com/ngoduykhanh/wireguard-ui">Wireguard UI</a>.
-                        </strong> All rights reserved.
+                            <a href="https://github.com/gabrielpc1190/wireguardLXC">WireGuard LXC</a>.
+                        </strong>
+                        Fork of <a href="https://github.com/ngoduykhanh/wireguard-ui">WireGuard UI</a> by Khanh Ngo. All
+                        rights reserved.
 
                     </div>
                 </div>
@@ -83,7 +85,7 @@ About
         $.ajax({
             cache: false,
             method: 'GET',
-            url: 'https://api.github.com/repos/ngoduykhanh/wireguard-ui/releases/tags/' + $("#version").val(),
+            url: 'https://api.github.com/repos/gabrielpc1190/wireguardLXC/releases/tags/' + $("#version").val(),
             dataType: 'json',
             contentType: "application/json",
             success: function (data) {
@@ -99,7 +101,7 @@ About
         $.ajax({
             cache: false,
             method: 'GET',
-            url: 'https://api.github.com/repos/ngoduykhanh/wireguard-ui/releases/latest',
+            url: 'https://api.github.com/repos/gabrielpc1190/wireguardLXC/releases/latest',
             dataType: 'json',
             contentType: "application/json",
             success: function (data) {
@@ -121,7 +123,7 @@ About
         $.ajax({
             cache: false,
             method: 'GET',
-            url: 'https://api.github.com/repos/ngoduykhanh/wireguard-ui/contributors',
+            url: 'https://api.github.com/repos/gabrielpc1190/wireguardLXC/contributors',
             dataType: 'json',
             contentType: "application/json",
             success: function (data) {

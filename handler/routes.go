@@ -24,11 +24,11 @@ import (
 	"golang.zx2c4.com/wireguard/wgctrl"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/ngoduykhanh/wireguard-ui/emailer"
-	"github.com/ngoduykhanh/wireguard-ui/model"
-	"github.com/ngoduykhanh/wireguard-ui/store"
-	"github.com/ngoduykhanh/wireguard-ui/telegram"
-	"github.com/ngoduykhanh/wireguard-ui/util"
+	"github.com/gabrielpc1190/wireguardLXC/emailer"
+	"github.com/gabrielpc1190/wireguardLXC/model"
+	"github.com/gabrielpc1190/wireguardLXC/store"
+	"github.com/gabrielpc1190/wireguardLXC/telegram"
+	"github.com/gabrielpc1190/wireguardLXC/util"
 )
 
 var usernameRegexp = regexp.MustCompile("^\\w[\\w\\-.]*$")

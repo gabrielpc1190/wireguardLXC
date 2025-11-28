@@ -15,14 +15,14 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/gommon/log"
-	"github.com/ngoduykhanh/wireguard-ui/store"
-	"github.com/ngoduykhanh/wireguard-ui/telegram"
+	"github.com/gabrielpc1190/wireguardLXC/store"
+	"github.com/gabrielpc1190/wireguardLXC/telegram"
 
-	"github.com/ngoduykhanh/wireguard-ui/emailer"
-	"github.com/ngoduykhanh/wireguard-ui/handler"
-	"github.com/ngoduykhanh/wireguard-ui/router"
-	"github.com/ngoduykhanh/wireguard-ui/store/jsondb"
-	"github.com/ngoduykhanh/wireguard-ui/util"
+	"github.com/gabrielpc1190/wireguardLXC/emailer"
+	"github.com/gabrielpc1190/wireguardLXC/handler"
+	"github.com/gabrielpc1190/wireguardLXC/router"
+	"github.com/gabrielpc1190/wireguardLXC/store/jsondb"
+	"github.com/gabrielpc1190/wireguardLXC/util"
 )
 
 var (
@@ -163,7 +163,7 @@ func init() {
 		fmt.Println("Git Commit\t:", gitCommit)
 		fmt.Println("Git Ref\t\t:", gitRef)
 		fmt.Println("Build Time\t:", buildTime)
-		fmt.Println("Git Repo\t:", "https://github.com/ngoduykhanh/wireguard-ui")
+		fmt.Println("Git Repo\t:", "https://github.com/gabrielpc1190/wireguardLXC")
 		fmt.Println("Authentication\t:", !util.DisableLogin)
 		fmt.Println("Bind address\t:", util.BindAddress)
 		//fmt.Println("Sendgrid key\t:", util.SendgridApiKey)
