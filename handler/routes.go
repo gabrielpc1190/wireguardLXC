@@ -8,6 +8,7 @@ import (
 	"io/fs"
 	"net/http"
 	"os"
+	"os/exec"
 	"regexp"
 	"sort"
 	"strconv"
@@ -1158,6 +1159,18 @@ func ApplyServerConfig(db store.IStore, tmplDir fs.FS) echo.HandlerFunc {
 				false, fmt.Sprintf("Cannot apply server config: %v", err),
 			})
 		}
+
+        if util.LookupEnvOrBool("WGUI_MANAGE_RESTART", false) {
+            log.Info("Restarting WireGuard interface wg0...")
+            cmd := exec.Command("systemctl", "restart", "wg-quick@wg0")
+            if err := cmd.Run(); err != nil {
+                log.Error("Failed to restart WireGuard interface: ", err)
+                 return c.JSON(http.StatusInternalServerError, jsonHTTPResponse{
+                    false, fmt.Sprintf("Applied config but failed to restart interface: %v", err),
+                })
+            }
+            log.Info("WireGuard interface restarted successfully")
+        }
 
 		err = util.UpdateHashes(db)
 		if err != nil {

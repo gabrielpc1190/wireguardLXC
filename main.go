@@ -138,6 +138,10 @@ func init() {
 	util.SendgridApiKey = flagSendgridApiKey
 	util.EmailFrom = flagEmailFrom
 	util.EmailFromName = flagEmailFromName
+	util.EmailFromName = flagEmailFromName
+    if len(flagSessionSecret) < 32 {
+        log.Fatal("Session secret is too short! It must be at least 32 characters long.")
+    }
 	util.SessionSecret = sha512.Sum512([]byte(flagSessionSecret))
 	util.SessionMaxDuration = int64(flagSessionMaxDuration) * 86_400 // Store in seconds
 	util.WgConfTemplate = flagWgConfTemplate

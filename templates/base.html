@@ -48,8 +48,8 @@
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3" style="display: none" id="search-form">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" placeholder="Search"
-                        aria-label="Search" id="search-input">
+                    <input class="form-control form-control-navbar" placeholder="Search" aria-label="Search"
+                        id="search-input">
                     <div class="input-group-append">
                         <button class="btn-navbar" type="submit" disabled>
                             <i class="fas fa-search"></i>
@@ -57,7 +57,8 @@
                     </div>
                 </div>
                 <div class="form-group form-group-sm">
-                    <select name="status-selector" id="status-selector" class="custom-select form-control-navbar" style="margin-left: 0.5em; height: 90%; font-size: 14px;">
+                    <select name="status-selector" id="status-selector" class="custom-select form-control-navbar"
+                        style="margin-left: 0.5em; height: 90%; font-size: 14px;">
                         <!-- THIS SECTION IS OVERRIDDEN BY JS. SEE updateSearchList() function in clients.html BEFORE EDITING -->
                         <option value="All">All</option>
                         <option value="Enabled">Enabled</option>
@@ -71,11 +72,12 @@
 
             <!-- Right navbar links -->
             <div class="navbar-nav ml-auto">
-                <button style="margin-left: 0.5em;" type="button" class="btn btn-outline-primary btn-sm" data-toggle="modal"
-                    data-target="#modal_new_client"><i class="nav-icon fas fa-plus"></i> New
+                <button style="margin-left: 0.5em;" type="button" class="btn btn-outline-primary btn-sm"
+                    data-toggle="modal" data-target="#modal_new_client"><i class="nav-icon fas fa-plus"></i> New
                     Client</button>
-                <button id="apply-config-button" style="margin-left: 0.5em; display: none;" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal"
-                    data-target="#modal_apply_config"><i class="nav-icon fas fa-check"></i> Apply
+                <button id="apply-config-button" style="margin-left: 0.5em; display: none;" type="button"
+                    class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modal_apply_config"><i
+                        class="nav-icon fas fa-check"></i> Apply
                     Config</button>
                 {{if .baseData.CurrentUser}}
                 <button onclick="location.href='{{.basePath}}/logout';" style="margin-left: 0.5em;" type="button"
@@ -116,7 +118,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <li class="nav-header">MAIN</li>
                         <li class="nav-item">
                             <a href="{{.basePath}}/" class="nav-link {{if eq .baseData.Active ""}}active{{end}}">
@@ -129,7 +132,7 @@
 
                         {{if .baseData.Admin}}
                         <li class="nav-item">
-                            <a href="{{.basePath}}/wg-server" class="nav-link {{if eq .baseData.Active "wg-server" }}active{{end}}">
+                            <a href="{{.basePath}}/wg-server" class="nav-link {{if eq .baseData.Active "wg-server"}}active{{end}}">
                                 <i class="nav-icon fas fa-server"></i>
                                 <p>
                                     Wireguard Server
@@ -140,7 +143,7 @@
 
                         <li class="nav-header">SETTINGS</li>
                         <li class="nav-item">
-                            <a href="{{.basePath}}/global-settings" class="nav-link {{if eq .baseData.Active "global-settings" }}active{{end}}">
+                            <a href="{{.basePath}}/global-settings" class="nav-link {{if eq .baseData.Active "global-settings"}}active{{end}}">
                                 <i class="nav-icon fas fa-cog"></i>
                                 <p>
                                     Global Settings
@@ -149,11 +152,11 @@
                         </li>
                         {{if not .loginDisabled}}
                         <li class="nav-item">
-                            <a href="{{.basePath}}/users-settings" class="nav-link {{if eq .baseData.Active "users-settings" }}active{{end}}">
-                            <i class="nav-icon fas fa-cog"></i>
-                            <p>
-                                Users Settings
-                            </p>
+                            <a href="{{.basePath}}/users-settings" class="nav-link {{if eq .baseData.Active "users-settings"}}active{{end}}">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Users Settings
+                                </p>
                             </a>
                         </li>
                         {{end}}
@@ -161,7 +164,7 @@
 
                         <li class="nav-header">UTILITIES</li>
                         <li class="nav-item">
-                            <a href="{{.basePath}}/status" class="nav-link {{if eq .baseData.Active "status" }}active{{end}}">
+                            <a href="{{.basePath}}/status" class="nav-link {{if eq .baseData.Active "status"}}active{{end}}">
                                 <i class="nav-icon fas fa-signal"></i>
                                 <p>
                                     Status
@@ -169,7 +172,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{.basePath}}/wake_on_lan_hosts" class="nav-link {{if eq .baseData.Active "wake_on_lan_hosts" }}active{{end}}">
+                            <a href="{{.basePath}}/wake_on_lan_hosts" class="nav-link {{if eq .baseData.Active "wake_on_lan_hosts"}}active{{end}}">
                                 <i class="nav-icon fas  fa-solid fa-power-off"></i>
                                 <p>
                                     WoL Hosts
@@ -178,11 +181,11 @@
                         </li>
                         <li class="nav-header">ABOUT</li>
                         <li class="nav-item">
-                            <a href="{{.basePath}}/about" class="nav-link {{if eq .baseData.Active "about" }}active{{end}}">
-                            <i class="nav-icon fas  fa-solid fa-id-card"></i>
-                            <p>
-                                About
-                            </p>
+                            <a href="{{.basePath}}/about" class="nav-link {{if eq .baseData.Active "about"}}active{{end}}">
+                                <i class="nav-icon fas  fa-solid fa-id-card"></i>
+                                <p>
+                                    About
+                                </p>
                             </a>
                         </li>
                     </ul>
@@ -213,8 +216,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="subnet_ranges" class="control-label">Subnet range</label>
-                                <select id="subnet_ranges" class="select2"
-                                    data-placeholder="Select a subnet range" style="width: 100%;">
+                                <select id="subnet_ranges" class="select2" data-placeholder="Select a subnet range"
+                                    style="width: 100%;">
                                 </select>
                             </div>
                             <div class="form-group">
@@ -223,22 +226,22 @@
                             </div>
                             <div class="form-group">
                                 <label for="client_allowed_ips" class="control-label">Allowed IPs
-                                    <i class="fas fa-info-circle" data-toggle="tooltip"
-                                       data-original-title="Specify a list of addresses that will get routed to the
+                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-original-title="Specify a list of addresses that will get routed to the
                                        server. These addresses will be included in 'AllowedIPs' of client config">
                                     </i>
                                 </label>
                                 <input type="text" data-role="tagsinput" class="form-control" id="client_allowed_ips"
-                                    value="{{ StringsJoin .client_defaults.AllowedIps "," }}">
+                                    value="{{ StringsJoin .client_defaults.AllowedIps " ," }}">
                             </div>
                             <div class="form-group">
                                 <label for="client_extra_allowed_ips" class="control-label">Extra Allowed IPs
-                                    <i class="fas fa-info-circle" data-toggle="tooltip"
-                                       data-original-title="Specify a list of addresses that will get routed to the
+                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-original-title="Specify a list of addresses that will get routed to the
                                        client. These addresses will be included in 'AllowedIPs' of WG server config">
                                     </i>
                                 </label>
-                                <input type="text" data-role="tagsinput" class="form-control" id="client_extra_allowed_ips" value="{{ StringsJoin .client_defaults.ExtraAllowedIps "," }}">
+                                <input type="text" data-role="tagsinput" class="form-control"
+                                    id="client_extra_allowed_ips"
+                                    value="{{ StringsJoin .client_defaults.ExtraAllowedIps " ," }}">
                             </div>
                             <div class="form-group">
                                 <label for="client_endpoint" class="control-label">Endpoint</label>
@@ -246,7 +249,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="use_server_dns" {{ if .client_defaults.UseServerDNS }}checked{{ end }}>
+                                    <input type="checkbox" id="use_server_dns" {{ if .client_defaults.UseServerDNS
+                                        }}checked{{ end }}>
                                     <label for="use_server_dns">
                                         Use server DNS
                                     </label>
@@ -254,7 +258,8 @@
                             </div>
                             <div class="form-group">
                                 <div class="icheck-primary d-inline">
-                                    <input type="checkbox" id="enabled" {{ if .client_defaults.EnableAfterCreation }}checked{{ end }}>
+                                    <input type="checkbox" id="enabled" {{ if .client_defaults.EnableAfterCreation
+                                        }}checked{{ end }}>
                                     <label for="enabled">
                                         Enable after creation
                                     </label>
@@ -262,8 +267,7 @@
                             </div>
                             <details>
                                 <summary><strong>Public and Preshared Keys</strong>
-                                    <i class="fas fa-info-circle" data-toggle="tooltip"
-                                       data-original-title="If you don't want to let the server generate and store the
+                                    <i class="fas fa-info-circle" data-toggle="tooltip" data-original-title="If you don't want to let the server generate and store the
                                        client's private key, you can manually specify its public and preshared key here
                                        . Note: QR code will not be generated">
                                     </i>
@@ -272,13 +276,16 @@
                                     <label for="client_public_key" class="control-label">
                                         Public Key
                                     </label>
-                                    <input type="text" class="form-control" id="client_public_key" name="client_public_key" placeholder="Autogenerated" aria-invalid="false">
+                                    <input type="text" class="form-control" id="client_public_key"
+                                        name="client_public_key" placeholder="Autogenerated" aria-invalid="false">
                                 </div>
                                 <div class="form-group">
                                     <label for="client_preshared_key" class="control-label">
                                         Preshared Key
                                     </label>
-                                    <input type="text" class="form-control" id="client_preshared_key" name="client_preshared_key" placeholder="Autogenerated - enter &quot;-&quot; to skip generation">
+                                    <input type="text" class="form-control" id="client_preshared_key"
+                                        name="client_preshared_key"
+                                        placeholder="Autogenerated - enter &quot;-&quot; to skip generation">
                                 </div>
                             </details>
                             <details style="margin-top: 0.5rem;">
@@ -286,13 +293,14 @@
                                 </summary>
                                 <div class="form-group" style="margin-top: 0.5rem;">
                                     <label for="client_telegram_userid" class="control-label">Telegram userid</label>
-                                    <input type="text" class="form-control" id="client_telegram_userid" name="client_telegram_userid">
+                                    <input type="text" class="form-control" id="client_telegram_userid"
+                                        name="client_telegram_userid">
                                 </div>
                             </details>
                         </div>
                         <div class="modal-footer justify-content-between">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit & Apply</button>
                         </div>
                     </form>
                 </div>
@@ -397,7 +405,9 @@
 
             updateApplyConfigVisibility()
             // from clients.html
-            updateSearchList()
+            if (typeof updateSearchList === "function") {
+                updateSearchList()
+            }
 
         });
 
@@ -414,29 +424,28 @@
         }
 
         function updateApplyConfigVisibility() {
-                $.ajax({
-                    cache: false,
-                    method: 'GET',
-                    url: '{{.basePath}}/test-hash',
-                    dataType: 'json',
-                    contentType: "application/json",
-                    success: function(data) {
-                        if (data.status) {
-                            $("#apply-config-button").show()
-                        }
-                        else
-                        {
-                            $("#apply-config-button").hide()
-                        }
-                    },
-                    error: function(jqXHR, exception) {
-                        const responseJson = jQuery.parseJSON(jqXHR.responseText);
-                        toastr.error(responseJson['message']);
+            $.ajax({
+                cache: false,
+                method: 'GET',
+                url: '{{.basePath}}/test-hash',
+                dataType: 'json',
+                contentType: "application/json",
+                success: function (data) {
+                    if (data.status) {
+                        $("#apply-config-button").show()
                     }
-                });
+                    else {
+                        $("#apply-config-button").hide()
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    const responseJson = jQuery.parseJSON(jqXHR.responseText);
+                    toastr.error(responseJson['message']);
+                }
+            });
         }
 
-        
+
         // populateClient function for render new client info
         // on the client page.
         function populateClient(client_id) {
@@ -472,21 +481,23 @@
             }
 
 
-            if ($("#use_server_dns").is(':checked')){
+            if ($("#use_server_dns").is(':checked')) {
                 use_server_dns = true;
             }
 
             let enabled = false;
 
-            if ($("#enabled").is(':checked')){
+            if ($("#enabled").is(':checked')) {
                 enabled = true;
             }
             const public_key = $("#client_public_key").val();
             const preshared_key = $("#client_preshared_key").val();
 
-            const data = {"name": name, "email": email, "telegram_userid": telegram_userid, "allocated_ips": allocated_ips, "allowed_ips": allowed_ips,
+            const data = {
+                "name": name, "email": email, "telegram_userid": telegram_userid, "allocated_ips": allocated_ips, "allowed_ips": allowed_ips,
                 "extra_allowed_ips": extra_allowed_ips, "endpoint": endpoint, "use_server_dns": use_server_dns, "enabled": enabled,
-                "public_key": public_key, "preshared_key": preshared_key};
+                "public_key": public_key, "preshared_key": preshared_key
+            };
 
             $.ajax({
                 cache: false,
@@ -495,16 +506,17 @@
                 dataType: 'json',
                 contentType: "application/json",
                 data: JSON.stringify(data),
-                success: function(resp) {
+                success: function (resp) {
                     $("#modal_new_client").modal('hide');
                     toastr.success('Created new client successfully');
                     // Update the home page (clients page) after adding successfully
                     if (window.location.pathname === "{{.basePath}}/") {
                         populateClient(resp.id);
                     }
-                    updateApplyConfigVisibility()
+                    // Automatically apply config
+                    applyWgConfig();
                 },
-                error: function(jqXHR, exception) {
+                error: function (jqXHR, exception) {
                     const responseJson = jQuery.parseJSON(jqXHR.responseText);
                     toastr.error(responseJson['message']);
                 }
@@ -525,7 +537,7 @@
                 url: `{{.basePath}}/api/suggest-client-ips?sr=${subnetRange}`,
                 dataType: 'json',
                 contentType: "application/json",
-                success: function(data) {
+                success: function (data) {
                     const allocated_ips = $("#client_allocated_ips").val().split(",");
                     allocated_ips.forEach(function (item, index) {
                         $('#client_allocated_ips').removeTag(escape(item));
@@ -534,7 +546,7 @@
                         $('#client_allocated_ips').addTag(item);
                     })
                 },
-                error: function(jqXHR, exception) {
+                error: function (jqXHR, exception) {
                     const allocated_ips = $("#client_allocated_ips").val().split(",");
                     allocated_ips.forEach(function (item, index) {
                         $('#client_allocated_ips').removeTag(escape(item));
@@ -638,25 +650,30 @@
             updateIPAllocationSuggestion();
         });
 
+        // applyWgConfig function
+        function applyWgConfig() {
+            $.ajax({
+                cache: false,
+                method: 'POST',
+                url: '{{.basePath}}/api/apply-wg-config',
+                dataType: 'json',
+                contentType: "application/json",
+                success: function (data) {
+                    updateApplyConfigVisibility()
+                    $("#modal_apply_config").modal('hide');
+                    toastr.success('Applied config successfully');
+                },
+                error: function (jqXHR, exception) {
+                    const responseJson = jQuery.parseJSON(jqXHR.responseText);
+                    toastr.error(responseJson['message']);
+                }
+            });
+        }
+
         // apply_config_confirm button event
         $(document).ready(function () {
             $("#apply_config_confirm").click(function () {
-                $.ajax({
-                    cache: false,
-                    method: 'POST',
-                    url: '{{.basePath}}/api/apply-wg-config',
-                    dataType: 'json',
-                    contentType: "application/json",
-                    success: function(data) {
-                        updateApplyConfigVisibility()
-                        $("#modal_apply_config").modal('hide');
-                        toastr.success('Applied config successfully');
-                    },
-                    error: function(jqXHR, exception) {
-                        const responseJson = jQuery.parseJSON(jqXHR.responseText);
-                        toastr.error(responseJson['message']);
-                    }
-                });
+                applyWgConfig();
             });
         });
     </script>

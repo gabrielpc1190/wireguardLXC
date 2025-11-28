@@ -34,16 +34,17 @@ Users Settings
                 <div class="modal-body">
                     <div class="form-group" style="display:none">
                         <input type="text" style="display:none" class="form-control" id="_previous_user_name"
-                               name="_previous_user_name">
+                            name="_previous_user_name">
                     </div>
                     <div class="form-group">
                         <label for="_user_name" class="control-label">Name</label>
-                        <input type="text" class="form-control" id="_user_name" name="_user_name">
+                        <input type="text" class="form-control" id="_user_name" name="_user_name"
+                            autocomplete="username">
                     </div>
                     <div class="form-group">
                         <label for="_user_password" class="control-label">Password</label>
                         <input type="password" class="form-control" id="_user_password" name="_user_password" value=""
-                               placeholder="Leave empty to keep the password unchanged">
+                            placeholder="Leave empty to keep the password unchanged" autocomplete="new-password">
                     </div>
                     <div class="form-group">
                         <div class="icheck-primary d-inline">
@@ -133,7 +134,7 @@ Users Settings
     $(document).ready(function () {
         $("#remove_user_confirm").click(function () {
             const user_name = $(this).val();
-            const data = {"username": user_name};
+            const data = { "username": user_name };
             $.ajax({
                 cache: false,
                 method: 'POST',
